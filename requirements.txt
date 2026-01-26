@@ -6,3 +6,5 @@ pdf2image
 plotly
 xlsxwriter
 streamlit-option-menu
+streamlit-lottie
+requests
