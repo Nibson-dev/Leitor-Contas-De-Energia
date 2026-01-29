@@ -1,4 +1,4 @@
-# ⚡Conciliador de Energia Inteligente 
+# Conciliador de Energia Inteligente 
 
 > Uma ferramenta que transforma PDFs e imagens escaneadas em relatórios financeiros precisos usando Inteligência Artificial e Lógica Matemática.
 
