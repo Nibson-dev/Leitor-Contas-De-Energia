@@ -14,12 +14,12 @@ import time
 from datetime import datetime
 import glob
 
-# ==========================================
-# 🌌 CONFIGURAÇÃO GERAL
-# ==========================================
+
+# CONFIGURAÇÃO GERAL
+
 st.set_page_config(page_title="BASA Enterprise", page_icon="⚡", layout="wide", initial_sidebar_state="expanded")
 
-# --- ASSETS (ANIMAÇÕES) ---
+#  ASSETS (ANIMAÇÕES) 
 def load_lottieurl(url):
     try:
         r = requests.get(url, timeout=2)
@@ -31,7 +31,7 @@ lottie_dash = load_lottieurl("https://lottie.host/8b724219-c7c4-4d82-9907-7c1851
 lottie_scan = load_lottieurl("https://lottie.host/9e592750-252a-4315-9969-930490bf4468/M4jQ8Wf8W8.json")
 lottie_folder = load_lottieurl("https://lottie.host/5a703716-1c25-4eb4-b9d9-937222543e5d/k2Q2y7lq3p.json") # Pasta Animada
 
-# --- CSS SUPREMO ---
+#  CSS  
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -83,9 +83,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ==========================================
-# 🧠 ENGINE V17 (BACKEND)
-# ==========================================
+
+# ENGINE (BACKEND)
+
 DE_PARA_AGENCIAS = {
     "4988965":  {"Agencia": "Nova Marabá", "Estado": "PA", "Concessionaria": "Equatorial"},
     "23949":    {"Agencia": "Altamira", "Estado": "PA", "Concessionaria": "Equatorial"},
@@ -192,9 +192,8 @@ def processar_fatura(caminho):
         }
     except Exception as e: return {"AGÊNCIA": "ERRO", "STATUS": str(e)}
 
-# ==========================================
-# 🌌 NAVEGAÇÃO
-# ==========================================
+
+# NAVEGAÇÃO
 
 with st.sidebar:
     if lottie_dash: st_lottie(lottie_dash, height=80)
@@ -218,7 +217,7 @@ with st.sidebar:
 
 if 'data' not in st.session_state: st.session_state.data = pd.DataFrame()
 
-# --- PÁGINA: IMPORTAR (TURBO) ---
+#  PÁGINA: IMPORTAR  
 if selected == "Importar":
     c1, c2 = st.columns([2, 1])
     with c1:
@@ -295,7 +294,7 @@ if selected == "Importar":
     with c2:
         if lottie_folder: st_lottie(lottie_folder, height=300)
 
-# --- PÁGINA: DASHBOARD ---
+#  PÁGINA: DASHBOARD 
 elif selected == "Dashboard":
     if st.session_state.data.empty:
         st.warning("⚠️ Nenhum dado carregado.")
@@ -328,7 +327,7 @@ elif selected == "Dashboard":
         st.markdown("### Tabela Detalhada")
         st.dataframe(df, use_container_width=True, height=400)
 
-# --- PÁGINA: EXPORTAR ---
+#  PÁGINA: EXPORTAR 
 elif selected == "Exportar":
     if st.session_state.data.empty:
         st.warning("⚠️ Processe arquivos primeiro.")
