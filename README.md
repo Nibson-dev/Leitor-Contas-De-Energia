@@ -38,13 +38,5 @@ O projeto foi construído com uma stack moderna de Data Science:
 * **Visualização:** Plotly (Gráficos Interativos)
 * **Engenharia:** Lógica customizada de validação fiscal (Python Puro)
 
----
 
-##  Como Rodar Localmente
-
-Se você quiser rodar essa aplicação na sua máquina:
-
-1. **Clone o repositório**
-   ```bash
-   git clone [https://github.com/SEU-USUARIO/conciliador-basa.git](https://github.com/SEU-USUARIO/conciliador-basa.git)
-   cd conciliador-basa
+   
